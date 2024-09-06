@@ -1,30 +1,59 @@
-*{
+/* Centraliza a tela de login */
+body, html {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    
-}
-
-.login{
-    border-radius: 12px;
-    border: 1px solid black;
-    margin-top: 20%;
-
-}
-.telaLogin{
+    display: flex;
     justify-content: center;
     align-items: center;
+
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.telaLogin {
+    background-color: #c20303; /* Fundo vermelho escuro com transparência (fumê) */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid black; /* Borda em volta da caixinha */
+
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo da imagem com fundo amarelo */
+.imageLogo {
+    background-color: #ffdd4e; /* Fundo da imagem amarelo */
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 300px;
+    height: 150px;
+    border-radius: 10px 10px 0 0;
     
 }
-.imageLogo{
-    width: 300px;
-    height: 130px;
+
+/* Caixa de informações do usuário */
+.infoUsuario p {
+    margin: 10px 0;
 }
-.image{
-    background-color: yellow;
+
+.infoUsuario input[type="text"], 
+.infoUsuario input[type="email"], 
+.infoUsuario input[type="number"] {
+    width: 250px;
+    padding: 10px;
+    border-radius: 8px; /* Bordas arredondadas */
+    border: 2px solid #ccc; /* Borda das caixas de input */
+    outline: none;
 }
-.infoUsuario{
-    align-items: center;
-    justify-content: center;
+
+.infoUsuario input[type="text"]:focus, 
+.infoUsuario input[type="email"]:focus, 
+.infoUsuario input[type="text"]:focus {
+    border-color: #ff6600; /* Cor da borda ao focar */
 }
