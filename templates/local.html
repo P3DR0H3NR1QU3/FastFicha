@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Lanchonetes</title>
+    <link rel="stylesheet" href="/static/css/estilo.css">
+</head>
+<body class="lanchonete">
+    <div class="container">
+        <h1 class="titleLanch">Encontre a Lanchonete</h1>
+        <form class="buscaLanch" action="/buscar_lanchonete" method="GET">
+            <label for="nomeLanchonete" class="tituloDigitar">Digite o nome da lanchonete:</label>
+            <input class="busca" type="text" id="nomeLanchonete" name="nomeLanchonete" placeholder="Ex: Lanchonete do João" required>
+            <button class="botaoBusca" type="submit">Buscar</button>
+        </form>
+    </div>
+</body>
+</html>
