@@ -5,6 +5,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(to top, #c20303, #ffdd4e);
 
 }
 
@@ -16,22 +17,23 @@ body, html {
 }
 
 .telaLogin {
-    background-color: #c20303; /* Fundo vermelho escuro com transparência (fumê) */
+    background-color: #c20303; 
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    border: 2px solid black; /* Borda em volta da caixinha */
+    border: 2px solid black; 
 
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 20px;
+
 }
 
-/* Estilo da imagem com fundo amarelo */
+
 .imageLogo {
-    background-color: #ffdd4e; /* Fundo da imagem amarelo */
+    background-color: #ffdd4e; 
     padding-left: 30px;
-    padding-right: 30px;
+    padding-right: 39px;
     width: 300px;
     height: 150px;
     border-radius: 10px 10px 0 0;
@@ -45,12 +47,17 @@ body, html {
     padding-top: 7px;
     padding-bottom: 7px;
     border-radius: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
+}
+
+.buttonLogin:hover{
+    cursor: pointer;
 }
 
 /* Caixa de informações do usuário */
-.infoUsuario p {
+.infoUsuario, .titleLogin {
     margin: 10px 0;
+    color: #ffff;
 }
 
 .infoUsuario input[type="text"], 
@@ -66,5 +73,5 @@ body, html {
 .infoUsuario input[type="text"]:focus, 
 .infoUsuario input[type="email"]:focus, 
 .infoUsuario input[type="text"]:focus {
-    border-color: #ff6600; /* Cor da borda ao focar */
+    border-color: #ffdd4e; /* Cor da borda ao focar */
 }
