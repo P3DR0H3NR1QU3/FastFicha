@@ -1,13 +1,17 @@
-/* Centraliza a tela de login */
-body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
+.navbar{
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to top, #c20303, #ffdd4e);
-
+    display: flex;
+    background-color: #ffdd4e;
 }
+
+.imgcomidas{
+    width: 109px;
+}
+.logo{
+    width: 180px;
+}
+
 
 .login {
     display: flex;
@@ -52,6 +56,15 @@ body, html {
 
 .buttonLogin:hover{
     cursor: pointer;
+    background-color: #E17029;
+    color: white;
+}
+
+.escolhas{
+    display: flex;
+    font-size: 13px;
+    color: #fff;
+    gap: 12px;
 }
 
 /* Caixa de informações do usuário */
@@ -79,11 +92,45 @@ body, html {
     color: #fff;
 
 }
-.cadastro{
+.cadastre-se{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff
+}
+.cadastre-se:hover{
+    color: #ffdd4e;
+    
+}
 
+
+.cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.telaCadastro {
+    background-color: #c20303; 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid black; 
+
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+
+}
+
+.titleCadastro{
+    color: #fff;
+}
+.askOpcao{
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: -5px;
 }
 
 
