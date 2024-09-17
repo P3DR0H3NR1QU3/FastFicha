@@ -3,11 +3,45 @@
     align-items: center;
     display: flex;
     background-color: #ffdd4e;
+    height: 60px;
+}
+.imagespratos{
+    width: 130px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #ffdd4e;
+    margin-left: 5px;
 }
 
-.imgcomidas{
-    width: 109px;
+.pratos{
+    border: 2px solid black;
+    padding: 25px;
+    background-color: #c20303;
+    border-radius: 10px;
 }
+.pedidos{
+    display: flex;
+    gap: 10px;
+}
+.titlelanche{
+    color: #fff;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-top: 12px;
+}
+
+.preco{
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+}
+
 .logo{
     width: 180px;
 }
@@ -44,6 +78,17 @@
     
 }
 
+.buttonCompra{
+    background-color: #ffdd4e;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: -30px;
+}
+
 .buttonLogin{
     background-color: #ffdd4e;
     padding-left: 40px;
@@ -54,7 +99,7 @@
     margin-top: 10px;
 }
 
-.buttonLogin:hover{
+.buttonLogin, .buttonCompra:hover{
     cursor: pointer;
     background-color: #E17029;
     color: white;
