@@ -1,248 +1,127 @@
-.navbar{
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
     justify-content: center;
     align-items: center;
     display: flex;
     background-color: #ffdd4e;
     height: 60px;
 }
-.imagespratos{
-    width: 130px;
-    border-radius: 50%;
+
+.logo {
+    width: 180px;
+}
+
+/* Banner de Promoções */
+.banner-promo {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 4px solid #ffdd4e;
-    margin-left: 5px;
 }
 
-.pratos{
+.promo-slider {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.promo-slide {
+    display: none;
+    text-align: center;
+}
+
+.promo-slide img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.promo-slide p {
+    color: #fff;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* Carrossel de Comidas */
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pedidos {
+    display: flex;
+    gap: 10px;
+    overflow-x: hidden;
+}
+
+.pratos {
     border: 2px solid black;
     padding: 25px;
     background-color: #c20303;
     border-radius: 10px;
 }
-.pedidos{
-    display: flex;
-    gap: 10px;
-}
-.titlelanche{
-    color: #fff;
-    font-size: 12px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    padding-top: 12px;
+
+.imagespratos {
+    width: 130px;
+    border-radius: 50%;
+    border: 4px solid #ffdd4e;
 }
 
-.preco{
+.titlelanche, .preco {
     color: #fff;
     justify-content: center;
     align-items: center;
     display: flex;
+}
+
+.titlelanche {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.preco {
     font-size: 20px;
 }
 
-.logo{
-    width: 180px;
-}
-
-
-.login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.telaLogin {
-    background-color: #c20303; 
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    border: 2px solid black; 
-
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 20px;
-
-}
-
-
-.imageLogo {
-    background-color: #ffdd4e; 
-    padding-left: 30px;
-    padding-right: 39px;
-    width: 300px;
-    height: 150px;
-    border-radius: 10px 10px 0 0;
-    
-}
-
-.buttonCompra{
+.buttonCompra {
     background-color: #ffdd4e;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 7px;
-    padding-bottom: 7px;
+    padding: 7px 40px;
     border-radius: 10px;
     margin-top: 10px;
-    margin-bottom: -30px;
-}
-
-.buttonLogin{
-    background-color: #ffdd4e;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    border-radius: 10px;
-    margin-top: 10px;
-}
-
-.buttonLogin, .buttonCompra:hover{
     cursor: pointer;
-    background-color: #E17029;
+}
+
+.buttonCompra:hover {
+    background-color: #e17029;
     color: white;
 }
 
-.escolhas{
-    display: flex;
-    font-size: 13px;
-    color: #fff;
-    gap: 12px;
-}
-
-/* Caixa de informações do usuário */
-.infoUsuario, .titleLogin {
-    margin: 10px 0;
-    color: #ffff;
-}
-
-.infoUsuario input[type="password"], 
-.infoUsuario input[type="email"] {
-    width: 250px;
-    padding: 10px;
-    border-radius: 8px; /* Bordas arredondadas */
-    border: 2px solid #ccc; /* Borda das caixas de input */
-    outline: none;
-}
-
-.infoUsuario input[type="password"]:focus, 
-.infoUsuario input[type="email"]:focus {
-    border-color: #ffdd4e; /* Cor da borda ao focar */
-}
-
-.askcadastro{
-    font-size: 15px;
-    color: #fff;
-
-}
-.cadastre-se{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff
-}
-.cadastre-se:hover{
-    color: #ffdd4e;
-    
-}
-
-
-.cadastro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.telaCadastro {
-    background-color: #c20303; 
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    border: 2px solid black; 
-
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 20px;
-
-}
-
-.titleCadastro{
-    color: #fff;
-}
-.askOpcao{
-    color: #fff;
-    font-size: 18px;
-    margin-bottom: -5px;
-}
-
-
-.lanchonete {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
-    background-color: white;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 100%;
-    max-width: 400px;
-}
-
-.titleLanch {
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.buscaLanch {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.tituloDigitar {
-    font-size: 1rem;
-    color: #555;
-    text-align: left;
-}
-
-.busca[type="text"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.botaoBusca {
-    padding: 10px;
+/* Botões do Carrossel */
+.carousel-button {
+    background-color: transparent;
     border: none;
-    background-color: #007bff;
-    color: white;
-    font-size: 1rem;
-    border-radius: 5px;
+    font-size: 30px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-.botaoBusca:hover {
-    background-color: #0056b3;
+.left {
+    position: absolute;
+    left: 10px;
 }
 
-@media (max-width: 600px) {
-    .container {
-        padding: 20px;
-    }
-
-    .botaoBusca, .busca[type="text"] {
-        font-size: 0.9rem;
-    }
+.right {
+    position: absolute;
+    right: 10px;
 }
