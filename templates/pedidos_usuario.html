@@ -1,98 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedidos</title>
-    <link rel="stylesheet" href="/static/css/estilo.css">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
 </head>
 
 <body>
     <nav class="navbar">
         <div class="logoPedidos">
-            <img class="logo" src="images/logoFastFicha2.png" alt="logoFast">
+            <img class="logo" src="{{ url_for('static', filename='images/logoFastFicha2.png') }}" alt="logoFast">
         </div>
-
     </nav>
 
-    <section class="comidas">
-        <div class="pedidos">
-            <div class="pratos">
-                <div>
-                    <img class="imagespratos" src="images/IMG-20240424-WA0000.jpg" alt="">
-                </div>
-                <h1 class="titlelanche" >Nome Prato</h1>
-                <h2 class="preco">R$38,00</h2>
-                <button type="submit" class="buttonCompra">Comprar</button>
+    <!-- Banner de Promoções -->
+    <section class="banner-promo">
+        <div class="promo-slider" id="promoSlider">
+            {% for promo in promocoes %}
+            <div class="promo-slide">
+                <img src="{{ url_for('static', filename=promo['imagem']) }}" alt="{{ promo['descricao'] }}">
+                <p>{{ promo['descricao'] }}</p>
             </div>
-
-            <div class="pratos">
-                <div>
-                    <img class="imagespratos" src="images/IMG-20240424-WA0000.jpg" alt="">
-                </div>
-                <h1 class="titlelanche">Nome Prato</h1>
-                <h2 class="preco">R$30,00</h2>
-                <button type="submit" class="buttonCompra">Comprar</button>
-            </div>
-
-            <div class="pratos">
-                <div>
-                    <img class="imagespratos" src="images/IMG-20240424-WA0000.jpg" alt="">
-                </div>
-                <h1 class="titlelanche">Nome Prato</h1>
-                <h2 class="preco">R$12,50</h2>
-                <button type="submit" class="buttonCompra">Comprar</button>
-            </div>
-
-            <div class="pratos">
-                <div>
-                    <img class="imagespratos" src="images/IMG-20240424-WA0000.jpg" alt="">
-                </div>
-                <h1 class="titlelanche">Nome Prato</h1>
-                <h2 class="preco">R$5,50</h2>
-                <button type="submit" class="buttonCompra">Comprar</button>
-            </div>
-
-            <div class="pratos">
-                <div>
-                    <img class="imagespratos" src="images/IMG-20240424-WA0000.jpg" alt="">
-                </div>
-                <h1 class="titlelanche">Nome Prato</h1>
-                <h2 class="preco">R$9,50</h2>
-                <button type="submit" class="buttonCompra">Comprar</button>
-            </div>
-
-            <div class="pratos">
-                <div>
-                    <img class="imagespratos" src="images/IMG-20240424-WA0000.jpg" alt="">
-                </div>
-                <h1 class="titlelanche">Nome Prato</h1>
-                <h2 class="preco">R$7,80</h2>
-                <button type="submit" class="buttonCompra">Comprar</button>
-            </div>
-
-            <div class="pratos">
-                <div>
-                    <img class="imagespratos" src="images/IMG-20240424-WA0000.jpg" alt="">
-                </div>
-                <h1 class="titlelanche">Nome Prato</h1>
-                <h2 class="preco">R$8,65</h2>
-                <button type="submit" class="buttonCompra">Comprar</button>
-            </div>
+            {% endfor %}
         </div>
-        <button class="botaomenu" type="submit">MENU</button>
-
     </section>
 
+    <!-- Carrossel de Comidas -->
+    <section class="comidas">
+        <div class="carousel-container">
+            <button class="carousel-button left" onclick="scrollCarousel(-1)">&#10094;</button>
+            <div class="pedidos" id="carousel">
+                {% for prato in pratos %}
+                <div class="pratos">
+                    <div>
+                        <img class="imagespratos" src="{{ url_for('static', filename=prato['imagem']) }}" alt="Imagem do {{ prato['nome'] }}">
+                    </div>
+                    <h1 class="titlelanche">{{ prato['nome'] }}</h1>
+                    <h2 class="preco">{{ prato['preco'] }}</h2>
+                    <button type="submit" class="buttonCompra">Comprar</button>
+                </div>
+                {% endfor %}
+            </div>
+            <button class="carousel-button right" onclick="scrollCarousel(1)">&#10095;</button>
+        </div>
+    </section>
 
-
-</body>
-    <style>
-        *{
-            padding: 0px;
-            margin: 0px;
+    <script>
+        // Função para controlar o carrossel de lanches
+        function scrollCarousel(direction) {
+            const carousel = document.getElementById('carousel');
+            const scrollAmount = 400; // Valor do scroll em pixels
+            carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
         }
-    </style>
+
+        // Função para controlar o banner de promoções (slide automático)
+        let promoIndex = 0;
+        const slides = document.getElementsByClassName('promo-slide');
+
+        function showPromoSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            promoIndex++;
+            if (promoIndex > slides.length) { promoIndex = 1 }
+            slides[promoIndex - 1].style.display = 'block';
+            setTimeout(showPromoSlides, 7000); // Muda o slide a cada 7s
+        }
+
+        window.onload = function() {
+            showPromoSlides(); // Inicia o slide automático ao carregar a página
+        };
+    </script>
+</body>
 </html>
